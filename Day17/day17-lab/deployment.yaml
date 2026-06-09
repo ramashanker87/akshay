@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: akshay-ecr-app
+  namespace: day17
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: akshay-ecr-app
+  template:
+    metadata:
+      labels:
+        app: akshay-ecr-app
+    spec:
+      containers:
+        - name: akshay-ecr-container
+          image: 386757865964.dkr.ecr.us-east-1.amazonaws.com/akshay-ecr:v2
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
