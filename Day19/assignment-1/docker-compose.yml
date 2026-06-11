@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  ecs-app:
+    image: ecs-app:v1
+    container_name: ecs-app
+    ports:
+      - "8080:8080"
+    environment:
+       PARTICIPANT_NAME: "Akshay"
+
+  eks-app:
+    image: eks-app:v1
+    container_name: eks-app
+    ports:
+      - "8081:8080"
+    environment:
+      PARTICIPANT_NAME: "Akshay"
